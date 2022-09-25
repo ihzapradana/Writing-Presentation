@@ -1,5 +1,5 @@
 
-#**Ringkasan Materi Minggu 1 Bootcamp Coding**
+# **Ringkasan Materi Minggu 1 Bootcamp Coding**
 
 # **Unix Command Line**<br>
 - **Shell** adalah program yang digunakan untuk berkomunikasi atau memerintahkan sistem. <br>
@@ -21,8 +21,7 @@ sedangkan <B>ls -a</B> adalah command untuk melihat file yang diembunyikan.
 -<B>mv</B>, adalah command untuk memindah dan me-rename file/direktory.<br>
 -<B>rm</B>, adalah command untuk menghapus file.<br>
 -<B>rm -d / rm -R</B>, adalah command untuk menghapus direktory.<br><br>
-
-#**Git & Github** <br>
+# **Git & Github** <br>
 - <B>Git</B> adalah tools untuk para progrmmer yang digunakan sebagai <em> version control system</em>, yaitu untuk mencatat setiap perubahan pada file (termasuk code yang kita buat) pada suatu proyek yang bisa dikerjakan secara individu maupun tim. Jadi, Git merupakan aplikasi yang dapat melacak setiap perubahan yang terjadi pada suatu folder / file.<br>
 - <B>Github</B> merupakan layanan cloud yang berguna untuk menyimpan dan mengelola sebuah project yang dinamakan repository (repo git).
 - <B>Mengapa perlu Git & Github?</B> tujuannya adalah agar kita bisa bekerja dalam sebuah tim dan bisa berkolaborasi mengerjakan sebuah proyek tanpa harus repot copy paste, serta kita juga tidak perlu menunggu rekan satu tim untuk menyelesaikan suatu program dahulu untuk berkolaborasi.<br>
@@ -57,7 +56,7 @@ Untuk melakukan clonning github ke local, saya biasanya menggunakan cara : <br>
 <em>Ketiga</em>, ketik git clone https://github.com/ihzapradana/Writing-Presentation.git . Lalu tekan enter<br>
 <em>Proses clonning github selesai.</em> <br>
 
-#**HTML Dasar** <br>
+# **HTML Dasar** <br>
 - <B>Peran HTML pada web development</B> <br>
 HTML adalah singkatan dari Hypertext Markup Language. HTML digunakan untuk menampilkan konten pada browser. HTML bukanlah bahasa pemrograman, artinya HTML tidak bisa dinamis mengolah data.
 
@@ -89,7 +88,7 @@ Untuk dapat mempublish website yang telah kita buat ke Netlify yaitu dengan mela
 <em>ketiga</em>, pilih project yang mau di deploy, kemudian kilk "Deploy site".<br>
 Proses deployment website sudah selesai dan website yang telah kita buat tadi bisa diakses oleh orang lain :) <br>
 
-#**CSS Dasar** <br>
+# **CSS Dasar** <br>
 - <B>Peran CSS pada web development</B> <br>
 - <B>Cara menyisipkan CSS ke dalam HTML</B> <br>
 - <B>Menggunakan syntax dasar CSS</B> <br>
