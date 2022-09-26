@@ -110,12 +110,41 @@ Pada sesi live class minggu ini yang membahas materi CSS dasar menerapkan proper
 Untuk dapat menerapkan responsive web design, kita perlu menambahkan meta data berikut ini di dalam element tag <head> di file HTML. Di dalam meta data tersebut terdapat beberapa attribute diantaranya <br>
 <ol>
 <li>"name = viewport"</li>
-<li>content="width=device-width</li><br>
+<li>content="width=device-width</li>
 yang memberitahu browser untuk mengikuti lebar layar dari perangkatnya. Sebab lebar layar tiap perangkat berbeda-beda.
-<li>initial-scale=1.0 </li> <br>
+<li>initial-scale=1.0 </li>
 yang memberitahu browser tingkat pembesaran (zoom level) dari halaman itu.
-</ol> <br>
 Selain itu, kita juga bisa menggunakan Properti "max-width: 100%" untuk menentukan lebar maksimal dari suatu element.
+</ol>
 
 - <B>Menggunakan Flexbox</B> <br>
 Dalam praktik membuat halaman web profile sederhana dalam sesi live class materi CSS dasar, penerapan flex box beberapa kali dilakukan diantaranya untuk menyejajarkan logo dengan navigasi home, about & contact us. Selain itu juga diterapkan untuk menyejajarkan teks nama dengan foto profile.
+
+# **Javascript Dasar** <br>
+Javascript adalah bahasa pemograman yang sangat powerful yang digunakan untuk logic pada sebuah website. Javascript juga dapat membuat website menjadi interaktif dan dinamis. Materi yang dijelaskan di kelas pada minggu 1 yaitu tentang conditional & looping. 
+
+- <B>Conditional</B> <br>
+conditional artinya adalah persyaratan. Di JavaScript ada dua cara menulis perintah conditional, yaitu: Menggunakan if, else if dan else, juga menggunakan switch dan case.<br>
+<ol>
+<li>if</li>
+Digunakan apabila hanya ada 1 kondisi dan 1 keputusan yang dijalankan.
+<li>if ... else</li>
+Digunakan apabila ada beberapa kondisi dan beberapa keputusan yang dijalankan. Jika ada banyak kondisi kita bisa menggunakan "else if".
+</ol>
+
+- <B>Looping</B> <br>
+Loop adalah sekumpulan kode yang akan dijalankan berulang kali sampai batas yang ditentukan. Ada 5 jenis loop di JavaScript, yaitu: <br>
+<ol>
+<li>for</li>
+<li>for...in</li>
+<li>for...of</li>
+<li>while</li>
+<li>do...while</li>
+Namun yang dipelajari di kelas di minggu 1 ini yaitu hanya for. Syntax yang digunakan ketika menggunakan for loop yaitu <br>
+for (pernyataan1; pernyataan2; pernyataan3) {
+  // kode yang akan dijalankan ketika pernyataan2 benar (true)
+} <br>
+<B>pernyataan1</B> digunakan untuk menentukan nilai awal berjalannya loop.
+<B>pernyataan2</B> digunakan untuk mendefinisikan kondisi berjalannya sebuah loop. Apabila nilai kondisinya false, maka loop akan berakhir.<br>
+<B>pernyataan3</B> digunakan untuk menambah atau mengurangi nilai awal pada pernyataan1 setiap kali loop dijalankan.
+</ol>
