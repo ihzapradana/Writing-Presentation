@@ -104,8 +104,18 @@ Ada 3 cara untuk menyisipkan CSS ke dalam HTML, yaitu:<br>
 Sintaks CSS terdiri dari tiga bagian: pemilih atau selektor (selector), sifat atau properti (property), dan nilai (value). “Selektor” biasanya adalah elemen atau tag HTML yang akan didefinisikan, “properti” adalah atribut yang akan diganti dengan “nilai” tertentu. Properti dan nilai dipisahkan dengan tanda titik dua (:) dan keduanya diapit oleh tanda kurung kurawal ({}).
 
 - <B>Menerapkan styling CSS pada sebuah halaman HTML</B><br>
+Pada sesi live class minggu ini yang membahas materi CSS dasar menerapkan property diantaranya :(margin, paading, text-decoration, list-style, color, font-family, display=>flex / flexbox, justify-content, align-items, font-size, font-weight, border-radius, background-color) yang mana property-property tersebut diterapkan pada latihan membuat sebuah halaman profile sederhana.
 
+- <B>Menggunakan metode responsive web design menggunakan CSS</B> <br>
+Untuk dapat menerapkan responsive web design, kita perlu menambahkan meta data berikut ini di dalam element tag <head> di file HTML. Di dalam meta data tersebut terdapat beberapa attribute diantaranya <br>
+<ol>
+<li>"name = viewport"</li>
+<li>content="width=device-width</li><br>
+yang memberitahu browser untuk mengikuti lebar layar dari perangkatnya. Sebab lebar layar tiap perangkat berbeda-beda.
+<li>initial-scale=1.0 </li> <br>
+yang memberitahu browser tingkat pembesaran (zoom level) dari halaman itu.
+</ol> <br>
+Selain itu, kita juga bisa menggunakan Properti "max-width: 100%" untuk menentukan lebar maksimal dari suatu element.
 
-- <B>Menggunkan metode responsive web design menggunakan CSS</B> <br>
-- <B>Menggunakan Flexbox</B>
-
+- <B>Menggunakan Flexbox</B> <br>
+Dalam praktik membuat halaman web profile sederhana dalam sesi live class materi CSS dasar, penerapan flex box beberapa kali dilakukan diantaranya untuk menyejajarkan logo dengan navigasi home, about & contact us. Selain itu juga diterapkan untuk menyejajarkan teks nama dengan foto profile.
