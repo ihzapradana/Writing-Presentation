@@ -90,9 +90,22 @@ Proses deployment website sudah selesai dan website yang telah kita buat tadi bi
 
 # **CSS Dasar** <br>
 - <B>Peran CSS pada web development</B> <br>
+CSS (Cascading Style Sheets) adalah bahasa komputer yang digunakan untuk menambahkan design ke suatu halaman website di internet. Apabila di dokumen HTML itu terdapat konten CSS maka browser akan memproses CSS tersebut dan menampilkan design sesuai dengan apa yang telah ditentukan. 
+
 - <B>Cara menyisipkan CSS ke dalam HTML</B> <br>
+Ada 3 cara untuk menyisipkan CSS ke dalam HTML, yaitu:<br>
+<ol>
+<li>Inline CSS, yaitu menggunakan attribute style untuk menyisipkan kode CSS langsung di dalam HTML element.</li>
+<li>Internal CSS, yaitu menggunakan element tag style untuk menyisipkan kode CSS. Element tag style tersebut diletakkan di dalam element.</li>
+<li>External CSS, yaitu sebuah file CSS terpisah yang disambungkan dengan file HTML dengan menggunakan element tag link.</li>
+</ol>
+
 - <B>Menggunakan syntax dasar CSS</B> <br>
+Sintaks CSS terdiri dari tiga bagian: pemilih atau selektor (selector), sifat atau properti (property), dan nilai (value). “Selektor” biasanya adalah elemen atau tag HTML yang akan didefinisikan, “properti” adalah atribut yang akan diganti dengan “nilai” tertentu. Properti dan nilai dipisahkan dengan tanda titik dua (:) dan keduanya diapit oleh tanda kurung kurawal ({}).
+
 - <B>Menerapkan styling CSS pada sebuah halaman HTML</B><br>
+
+
 - <B>Menggunkan metode responsive web design menggunakan CSS</B> <br>
 - <B>Menggunakan Flexbox</B>
 
