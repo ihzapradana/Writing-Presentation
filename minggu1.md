@@ -157,7 +157,7 @@ Algoritma adalah urutan atau langkah logis untuk memecahkan suatu masalah. Sedan
 Karena dalam programming itu identik dengan memecahkan suatu permasalahan, maka dari itu algoritma merupakan pemeran utamanya. Bahasa pemrograman hanyalah sebagai pendamping. Kemudian dalam penyimpanan data diperlukan sebuah struktur? Jawabannya adalah supaya lebih mudah/efisien dalam pengaksesan/pemrosesan data tersebut. <br>
 
 - <B>Membuat Algoritma Sederhana</B> <br>
-COntoh dari algoritma sederhana yaitu algoritma untuk minum air ketika kita haus. Alur dari algoritma untuk mengatasi permasalahan haus tersebut yaitu : <br>
+Contoh dari algoritma sederhana yaitu algoritma untuk minum air ketika kita haus. Alur dari algoritma untuk mengatasi permasalahan haus tersebut yaitu : <br>
 <ol>
 <li>Pergi ke dapur</li>
 <li>Ambil gelas di rak</li>
@@ -177,7 +177,7 @@ Berikut adalah contoh code program untuk menghitung hasil dari 4 dimodulus 2 :
 ```
 
 - <B>Mempraktikkan pendekatan menyelesaikan suatu masalah untuk diselesaikan melalui program </B> <br>
-Berikut adalah contoh code program untuk menyelesaikan permasalahan pengkategorian nilai lulus :
+Berikut adalah contoh code program untuk menyelesaikan permasalahan pengkategorian nilai lulus. Jika nilai > 70 & jumlah absen (tidak hadir) < 5, maka dinyatakan lulus :
 ```Javascript
     let nama = 'Ihza'
     let nilai = 71
@@ -192,6 +192,7 @@ Berikut adalah contoh code program untuk menyelesaikan permasalahan pengkategori
 - <B>Menerapkan salah satu algoritma dengan JavaScript</B> <br>
 Berikut adalah contoh code program untuk menyelesaikan permasalahan mencari angka 5 dalam  range angka 1 - 10 :
 ```Javascript
+    let i = 1
     for(i; i<=10; i++){
     if(i == 5){
         console.log(i, 'angka 5 ditemukan')
