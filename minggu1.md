@@ -148,3 +148,54 @@ for (pernyataan1; pernyataan2; pernyataan3) {
 <B>pernyataan2</B> digunakan untuk mendefinisikan kondisi berjalannya sebuah loop. Apabila nilai kondisinya false, maka loop akan berakhir.<br>
 <B>pernyataan3</B> digunakan untuk menambah atau mengurangi nilai awal pada pernyataan1 setiap kali loop dijalankan.
 </ol>
+
+# **Algoritma dan Data Structures** <br>
+- <B>Perbedaan Algoritma dan Data Structures</B> <br>
+Algoritma adalah urutan atau langkah logis untuk memecahkan suatu masalah. Sedangkan Struktur Data yaitu merujuk pada cara sebuah informasi atau data disimpan sedemikian rupa sehingga informasi ini dapat digunakan kembali secara efisien. Salah satu struktur data yang paling populer yaitu Array. <br>
+
+- <B>Manfaat dari algoritma dan Data Structures</B> <br>
+Karena dalam programming itu identik dengan memecahkan suatu permasalahan, maka dari itu algoritma merupakan pemeran utamanya. Bahasa pemrograman hanyalah sebagai pendamping. Kemudian dalam penyimpanan data diperlukan sebuah struktur? Jawabannya adalah supaya lebih mudah/efisien dalam pengaksesan/pemrosesan data tersebut. <br>
+
+- <B>Membuat Algoritma Sederhana</B> <br>
+COntoh dari algoritma sederhana yaitu algoritma untuk minum air ketika kita haus. Alur dari algoritma untuk mengatasi permasalahan haus tersebut yaitu : <br>
+<ol>
+<li>Pergi ke dapur</li>
+<li>Ambil gelas di rak</li>
+<li>Pergi ke dispenser</li>
+<li>Isi gelas dengan air</li>
+<li>Air siap untuk diminum</li>
+</ol>
+
+- <B>Menerapkan Algoritma ke Dalam Bahasa Pemrograman</B>
+```Javascript
+    let angka = 4;
+    let hasil;
+
+    hasil = angka % 2;
+    console.log(hasil);
+```
+
+- <B>Mempraktikkan pendekatan menyelesaikan suatu masalah untuk diselesaikan melalui program </B> <br>
+Berikut adalah contoh code program untuk menyelesaikan permasalahan pengkategorian nilai lulus :
+```Javascript
+    let nama = 'Ihza'
+    let nilai = 71
+    let absen = 3
+    if(nilai > 70 && absen < 5){
+        console.log( `${nama} lulus`)
+    } else{
+        console.log('Kamu tidak lulus')
+    }
+```
+
+- <B>Menerapkan salah satu algoritma dengan JavaScript</B> <br>
+Berikut adalah contoh code program untuk menyelesaikan permasalahan mencari angka 5 dalam  range angka 1 - 10 :
+```Javascript
+    for(i; i<=10; i++){
+    if(i == 5){
+        console.log(i, 'angka 5 ditemukan')
+    }else{
+        console.log(i)
+    }
+}
+```
