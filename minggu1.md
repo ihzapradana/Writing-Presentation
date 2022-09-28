@@ -166,7 +166,8 @@ COntoh dari algoritma sederhana yaitu algoritma untuk minum air ketika kita haus
 <li>Air siap untuk diminum</li>
 </ol>
 
-- <B>Menerapkan Algoritma ke Dalam Bahasa Pemrograman</B>
+- <B>Menerapkan Algoritma ke Dalam Bahasa Pemrograman</B> <br>
+Berikut adalah contoh code program untuk menghitung hasil dari 4 dimodulus 2 :
 ```Javascript
     let angka = 4;
     let hasil;
