@@ -264,7 +264,7 @@ Berikut adalah penerapannya : <br>
 ```javascript
     app.append(paragraf)
 ```
-## **Melakukan Styling Mnenggunakan DOM** <br>
+## **Melakukan Styling Menggunakan DOM** <br>
 Selain dapat mengubah konten yang ada dalam HTML, kita juga dapat malakukan styling seperti halnya di CSS, tapi di Javascript dengan menggunakan DOM. <br>
 Berikut untuk penerapannya : <br>
 ```javascript
