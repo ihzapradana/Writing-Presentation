@@ -42,7 +42,7 @@ function myFunction( kondisi ){
      statement;
 }
 ```
-- Function Classic<br>
+- Function Variabel<br>
 ```javascript
     let myFunction = function(){
         statement;
@@ -283,7 +283,7 @@ File HTML :
 ```javascript
     <body>
         <h1 onclick="alert('selamat datang')">Hallo</h1>
-        <p id="paragraf">Clicl Me</p>
+        <p id="paragraf">Click Me</p>
         <button id="btn">ini button</button>
     </body>
 ```
