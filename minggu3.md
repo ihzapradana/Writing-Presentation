@@ -89,5 +89,109 @@ Berikut adalah implementasinya :   <br>
 <br>
 
 # Object & Array Of Object <br>
+## Object
 Object adalah sebuah tipe data pada variabel yang menyimpan properti dan fungsi (method). Properti adalah data lengkap dari sebuah object. Method adalah action dari sebuah object.
-Berikut adalah implementasi 
+Berikut adalah implementasi cara mengakses objek : <br>
+```javascript
+    let siswa = {
+    nama : 'Ihza',
+    umur : 19,
+    'nomor hp' : 08832472
+    }
+```
+<ol>
+<li> <B>Menggunakan Dot Notation</B></li>
+
+```javascript
+    console.log(siswa.umur) // Output 19
+```
+
+<li><B>Menggunakan Bracket</B></li>
+
+```javascript
+    console.log(siswa['umur']) // Output 19
+    console.log(siswa["nomor hp"]) // Output 08832472
+```
+<li><B>Memanggil nama objek dengan variabel</B></li>
+
+```javascript
+    let property = 'umur'
+    console.log(siswa[property]); // Output 19
+```
+</ol>
+
+- **Cara menambah property baru dalam objek** <br>
+```javascript
+    let buku = {
+        judul : 'mantan jadi manten',
+        penulis : 'hayati',
+        'jumlah halaman': 250
+    }
+
+    buku.tahun = 2022 // Menambahkan property tahun = 2022
+    buku['penerbit'] = 'gramedia' // Menambahkan property penerbit = gramedia
+    console.log(buku)
+```
+- **Cara mengganti property dalam objek** <br>
+```javascript
+    let hewan = {
+        nama : 'kucing',
+        warna : 'putih',
+        kaki : 4
+    }
+    hewan.nama = 'anjing' // Mengganti value property nama  menjadi anjing
+    hewan['kaki'] = 2 // Mengganti value property kaki menjadi 2
+    console.log(hewan);
+```
+
+- **Cara menghapus property** <br>
+```javascript
+    let hewan = {
+        nama : 'kucing',
+        warna : 'putih',
+        kaki : 4
+    }
+    delete hewan.warna // Menghapus property warna dari objek hewan
+    console.log(hewan);
+```
+
+## Array Of Object <br>
+Yaitu adanya objek di dalam sebuah array. Karena berada dalam sebuah array, maka objek-objek tesebut akan mempunyai index. Berikut implementasinya :
+```javascript
+    let user = [
+    {
+        nama : 'himawan',
+        umur : 19,
+        alamat : 'jember'
+    },
+
+    {
+        nama : 'ihza',
+        umur : 19,
+        alamat : 'jakarta'
+    },
+
+    {
+        nama : 'pradana',
+        umur : 19,
+        alamat : 'Malang'
+    }
+    ]
+
+    console.log(user);
+```
+Kemudian melakukan Looping menggunakan map() <br>
+```javascript
+    let data = user.map((item) =>{
+    item.status = 'aktif' // Menambahkan property status dengan value aktif pada setiap objek
+    return item
+    })
+    console.log(data);
+    console.log(user[0].nama); // Ouput : himawan
+```
+Cara contructor
+```javascript
+    let data = user.map(({nama}) => {
+        console.log(nama) // Menampilkan semua nama pada masing-masing objek : himawan, ihza, pradana
+    })
+```
