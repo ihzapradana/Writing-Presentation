@@ -243,7 +243,7 @@ console.log(apple);
     export {apple} // mengekspor variabel apple ke luar
 ```
 ## Rekusif 
-Rekursif adalah function yang memanggil dirinya sendiri sampai kondisi tertentu. Rekusrsif biasanya diguanakan dalam permasalahan matematika, kimia, fisika dan yang berhubungan dengan kalkulasi. <br>
+Rekursif adalah function yang memanggil dirinya sendiri sampai kondisi tertentu. Rekursif biasanya diguanakan dalam permasalahan matematika, kimia, fisika dan yang berhubungan dengan kalkulasi. <br>
 Dalam rekursif, terdapat 2 komponen utama yaitu: <br>
 - **Base case** , yaitu titik paling kecil (berhenti). <br>
 - **Recursion case** , yaitu titik memanggil dirinya sendiri.<br>
@@ -316,4 +316,72 @@ jalanPromise
     console.log(err);
 });
 ```
-Dari kode program di atas, Output yang didapatkan yaitu berupa string "jalan terpenuhi bareng doi nih boss", karena kondisinya adalah true. Jika kondisinya dalam if adalah false, maka outputnya adalah "gagal jalan".
+Dari kode program di atas, Output yang didapatkan yaitu berupa string "jalan terpenuhi bareng doi nih boss", karena kondisinya adalah true. Jika kondisinya dalam if adalah false, maka outputnya adalah "gagal jalan". <br><br>
+
+# **Web Storage**
+Dengan web storage, aplikasi web dapat menyimpan data secara lokal di dalam browser pengguna. Kemudian Web API adalah jembatan agar HTML & Javascript bisa berinteraksi dengan browser. Selain web storage, ada cookies yang juga merupakan penyimpan data namun cookies hanya dapat menyimpan kurang dari 100 sampai 200 bytes. Sedangkan web storage dapat meniympan data hingga 5 MB. Tujuan menggunakan web storage diantaranya adalah : <br>
+<ol>
+<li>Preferensi user, ex : dark mode</li>
+<li>Setting</li>
+<li>Menyimpan Score</li>
+<li>Menyimpan posisi video terkhir dilihat</li>
+</ol>
+Dalam web storage, ada 2 objek untuk menyimpan data client : <br>
+<ol>
+<li><B>window.localStorage</B> = menyimpan data tanpa tanggal kedaluwarsa / unlimited</li>
+<li><B>window.sessionStorage</B> = menyimpan data untuk satu sesi (data hilang saat tab browser ditutup).</li>
+</ol>
+Ada beberapa metode yang dapat digunakan dalam menggunakan localStorage, yaitu : <br>
+
+- **setItem()** <br>
+Metode ini digunakan untuk menyimpan data kedalam localStorage. Dalam penggunaannya dibutuhkan dua parameter yaitu key dan value. Pada localStorage data yang disimpan dapat berupa object atau array, hanya saja sebelum data disimpan harus diubah terlebih dahulu menjadi string karena localStorage hanya menerima tipe data string. Untuk mengubahnya kita dapat menggunakan JSON.Stringfy(NamaVariabel).<br>
+- **getItem()** <br>
+Metode ini memungkinkan kalian untuk mengakses data yang disimpan pada localStorage. Nah setelah berhasil mengakses, untuk mengambil data localStorage berupa object atau array kita dapat menggunakan JSON.parse(NamaVariabel). <br>
+Berikut untuk implementasi dengan case membuat to do list aktivitas : <br>
+```javascript
+    const todos = [];
+    if (localStorage.getItem("todo")) { // untuk mengkases todo
+    const todoStore = JSON.parse(localStorage.getItem("todo")); // mengakses todo & merubah string ke objek
+
+    todoStore.map((todo) => { // melakukan mapping
+    const li = document.createElement("li"); // membuat list untuk menampilkan todo
+    li.innerText = todo; // menyisipkan teks ke dalam tag li
+
+    const container = document.querySelector("#list-container");
+    return container.appendChild(li); // Mengembalikan isi dalam tag li yang ditambahkan ke dalam variabel container
+  });
+}
+
+document.querySelector("form").addEventListener("submit", (ev) => { 
+    ev.preventDefault();
+    const userInput = document.querySelector("input").value; // Mendapatkan value dari inputan
+  
+    const li = document.createElement("li"); // membuat list untuk menampilkan todo inputan user
+    li.innerText = userInput; // Menyisipkan teks inputan user ke dalam tag li
+  
+    todos.push(userInput); // Menambahkan value inputan user ke dalam list variabel todos di atas
+  
+    localStorage.setItem("todo", JSON.stringify(todos)); // Menyimpan list todos & mengubahnya menjadi string
+  
+    const container = document.querySelector("#list-container");
+    container.appendChild(li); // Menambahkan isi dalam tag li ke dalam variabel container
+  });
+```
+Berikut contoh implementasi dalam case membuat dark mode : <br>
+```javascript
+if (localStorage.getItem("theme") === "dark") { // Untuk mengakses theme & memberikan kondisi
+    document.body.classList.add("dark"); // Membuat class dark dalam body jika memenuhi kondisi
+  } else {
+    document.body.classList.remove("dark"); // Menghapus class dark jika tidak memenuhi kondisi
+  }
+  
+  document.getElementById("toggle").onclick = () => { // Memberikan event onclick pada id toggle
+    if (localStorage.getItem("theme")) { // Untuk mengakses theme
+      localStorage.removeItem("theme"); // Menghapus theme
+      document.body.classList.remove("dark"); // Menghapus class dark jika memenuhi kondisi
+    } else {
+      localStorage.setItem("theme", "dark"); // Menyimpan theme & dark jika tidak memenuhi kondisi
+      document.body.classList.add("dark"); // Membuat class dark dalam body jika tidak memnuhi kondisi
+    }
+  };
+```
