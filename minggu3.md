@@ -195,3 +195,125 @@ Cara contructor
         console.log(nama) // Menampilkan semua nama pada masing-masing objek : himawan, ihza, pradana
     })
 ```
+<br>
+
+# **Moduls & Rekursif** <br>
+## **Moduls**
+Moduls adalah cara untuk memisahkan kode ke file yang berbeda. Keuntungan ketika kita menggunakan moduls diantaranya : <br>
+<ol>
+<li>Mudah untuk mengelola kode</li>
+<li>Kode tidak tertumpuk dalam 1 file</li>
+</ol>
+Contoh penerapan moduls yaitu : <br>
+Misalkan terdapat 3 file javascript yang berbeda, yaitu (indonesia.js , jepang.js , amerika.js) dan file indonesia.js yang ditautkan dalam file HTML nya. Maka, file indonesia.js dapat mengakses / mengimport file (jepang.js) & (amerika.js). Kemudian file (jepang.js) dapat mengakses / mengimport file (amerika.js). Namun, file (jepang.js & amerika.js) tidak mengakses file indonesia.js & file (amerika.js) tidak dapat mengakses file (jepang.js). <br>
+Berikut untuk penerapannya : <br>
+
+**File indonesia.js**
+```javascript
+// File indonesia.js => import dari file jepang dan amerika
+import Entertainment, { motor as motorJepang, smartPhoneJepang, sayHello } from "./jepang.js"
+import {apple} from './amerika.js';
+
+sayHello()
+
+console.log(Entertainment);
+console.log(smartPhoneJepang);
+
+console.log(motorJepang);
+console.log(apple);
+```
+**File jepang.js**
+```javascript
+    import {apple} from './amerika.js'; // import dari amerika.js
+    console.log(apple);
+
+    let motor = ["suzuki", "yamaha", "honda", "kawasaki"]
+    const smartPhone = ["sony", "samsung", "fujitsu", "LG"]
+
+    export function sayHello() {
+    console.log("hallooo")
+    }
+    let entertainment = ["anime", "manga", "wibu", "dorama"]
+    export default entertainment //untuk mengexport produk utama
+    //export default cuma bisa 1 yg di export
+```
+**FIle amerika.js** 
+```javascript
+    let apple = ["iphone", "macbook", "imac"]
+    export {apple} // mengekspor variabel apple ke luar
+```
+## Rekusif 
+Rekursif adalah function yang memanggil dirinya sendiri sampai kondisi tertentu. Rekusrsif biasanya diguanakan dalam permasalahan matematika, kimia, fisika dan yang berhubungan dengan kalkulasi. <br>
+Dalam rekursif, terdapat 2 komponen utama yaitu: <br>
+- **Base case** , yaitu titik paling kecil (berhenti). <br>
+- **Recursion case** , yaitu titik memanggil dirinya sendiri.<br>
+
+Berikut implementasinya dalam case mencari angka faktorial :<br>
+```javascript
+    function faktorial(n) {
+    if (n == 1) { // Base cae
+      return 1
+    } else { 
+      return n * faktorial(n - 1) // Recursion case
+    }
+  }
+  console.log(faktorial(5)) // Output 120
+```
+<br>
+
+# **Asynchronus**
+Javasvript mempunyai 3 sifat, diantaranya : <br>
+<ol>
+<li> <B>Single Thread</B> (Punya 1 jalur saja)</li>
+<li><B>Non-Blocking</B></li>
+Kalau ada proses yang lama, maka dia akan di pending dulu (mengalah) mengijinkan untuk mengeksekusi perintah yang selanjutnya.
+<li><B>Asynchronus</B></li> 
+Adalah proses yang tidak berurutan / eksekusi tidak selalu berdasarkan urutan kode, tetapi berdasarkan waktu proses (yang dieksekusi yaitu prosesnya yang pendek terlebih dahulu). Eksekusi dengan asynchronous tidak akan membloking atau menunggu suatu perintah sampai selesai. Daripada menunggu, asynchronous akan mengeksekusi perintah selanjutnya. 
+</ol>
+Ada 3 teknik yang digunakan dalam asynchronus ini, yaitu <B>Callback</B>, <B>Promise</B>, <B>Async-await</B>. Namun, pada minggu ini yang dipelajari hanya sampai callback & promise.
+
+- **Callback** <br>
+Adalah function yang dijadikan argument. Berikut untuk penerapannya : <br>
+```javascript
+    console.log("A")
+
+    setTimeout(() => {
+    console.log("B")
+    }, 1000)
+
+    console.log("C")
+```
+Jika kode program di atas dijalankan, maka urutan outputnya akan :<br>
+<ol>
+<li>A</li>
+<li>C</li>
+<li>B</li>
+</ol>
+Mengapa bisa terjadi urutan seperti itu? Urutan tersebut terjadi karena setelah mengeksekusi console.log("A"), akan mengeksekusi console.log("B"). Namun, terdapat setTimeout yang membuat proses untuk menampilkan string B membutuhkan waktu. Oleh karena itu, proses tersebut akan dipending dulu & lanjut untuk mengeksekusi perintah selanjutnya yaitu menampilkan string C. <br><br>
+
+- **Promise** <br>
+Dalam pengertian harfiah promise adalah janji. Dalam Javascript promise merepresentasikan sebuah object request pengolahan data yang dilakukan secara asynchronous dan promise ini mewakili sebuah operasi yang belum selesai, tetapi diharapkan di masa mendatang. Berikut untuk penerapannya : <br>
+```javascript
+    let jalanPromise = new Promise((resolve, reject) => {
+    if (true){
+        resolve('jalan terpenuhi') // jika berhasil
+    }
+    
+    reject('gagal jalan') //jika gagal
+});
+
+jalanPromise
+.then((result) => { // nangkap yg berhasil
+    return `${result} bareng doi`;
+})
+.then((result) => {
+    return `${result} nih boss`;
+})
+.then((result) => {
+    console.log(result); // Output : jalan terpenuhi bareng doi nih boss
+})
+.catch((err) => { // nangkap yg gagal
+    console.log(err);
+});
+```
+Dari kode program di atas, Output yang didapatkan yaitu berupa string "jalan terpenuhi bareng doi nih boss", karena kondisinya adalah true. Jika kondisinya dalam if adalah false, maka outputnya adalah "gagal jalan".
