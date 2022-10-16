@@ -123,4 +123,15 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
  - Menggunakan Grids <br>
  Secara sederhana CSS Grid adalah CSS yang dapat membagi kolom pada website menjadi beberapa bagian sesuai yang diinginkan, baik secara horizontal maupun vertikal. Penggunaan CSS Grid bertujuan untuk mempermudah developer untuk membuat layout dari design yang telah dibuat.
  - Menggunakan Bootstrap <br>
- Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah. Framework open source ini diciptakan pada tahun 2011 oleh Mark Otto dan Jacob Thornton dari Twitter.
+ Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah. Framework open source ini diciptakan pada tahun 2011 oleh Mark Otto dan Jacob Thornton dari Twitter.<br>
+ Kegunaan bootstrap diantaranya : <br>
+ <ol>
+<li>Menciptakan website Mobile Friendly</li>
+Dengan adanya sistem grid, proses membuat website mobile friendly tak akan membutuhkan waktu lama.
+<li>Memudahkan resize gambar</li>
+Dengan menambahkan class .img-responsive ke gambar, maka gambar tersebut akan otomatis di-resize sesuai ukuran layar pengguna.
+<li>Menambahkan elemen website tanpa ribet</li>
+Bootstrap menyediakan berbagai elemen yang bisa langsung kita gunakan di website. Misalnya, navigasi, menu dropdown, thumbnail, dan sebagainya
+<li>Membuat website lebih interaktif</li>
+Bootstrap juga memungkinkan kita untuk menggunakan plugin custom seperti JQuery. Jadi, kita bisa menambahkan berbagai elemen interaktif ke website dengan mudah. Misalnya, popup, transisi, image carousel, dan sebagainya.
+ </ol>
