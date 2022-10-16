@@ -83,18 +83,18 @@ Jika terjadi conflict (terjadi jika terdapat 1 file yang diedit oleh lebih dari 
 # **Responsive Web Design**
 Responsive web design adalah tampilan website yang bisa menyesuaikan dengan device pengguna. Device yang umumnya digunakan adalah laptop/PC, smartphone & tablet. <br>
 Ada beberapa teknik untuk dapat menerapkan responsive web design ini diantaranya : <br>
-- viewport <br>
+- <B>viewport</B> <br>
 Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  menetapkan area mana saja yang terlihat di situs web sekaligus menentukan skala kontennya.
 ```javascript
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-- Menggunakan max-width element
+- **Menggunakan max-width element**
  max-width digunakan untuk mengatur batas lebar maksimal dari sebuah elemen, jadi apabila kita menyisipkan gambar di halaman website kita maka gambar tersebut lebarnya akan 100% menyesuaikan dengan ukuran layar.
  ```javascript
     <img style "max-width : 100%;" src="images/nature.jpg" alt="image">
 ```
- - Menggunakan CSS Unit
+ - **Menggunakan CSS Unit**
  Ada beberapa macam satuan dalam CSS unit : <br>
  <ol>
 <li>em = mengikuti ukuran huruf element dia berada (parent)</li>
@@ -104,7 +104,7 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
 <li>% = realtive terhadap parent.</li>
  </ol> <br>
  
- - Menggunakan Media Query
+ - **Menggunakan Media Query**
  Media query digunakan untuk membuat beberapa styles tergantung pada jenis device. Media query untuk responsive web design umumnya menggunakan 2 jenis media query, diantaranya : min-width & max-width. 
  Ada 2 cara dalam menggunakan media query, diantaranya : <br>
  <ol>
@@ -112,7 +112,7 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
 <li>Menggabungkan 1 file CSS untuk setting stying berbagai device.</li>
  </ol>
 
- - Menggunakan Flexbox <br>
+ - **Menggunakan Flexbox** <br>
  Flexbox atau Flexible Box merupakan sebuah mode pengaturan atau konsep layout pada CSS yang digunakan untuk mengatur elemen atau container beserta item didalamnya pada halaman web. <br>
  Ada dua istilah penting saat belajar flexbox:
  <ol>
@@ -120,9 +120,9 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
  <li><B>Item</B> adalah element dalam container yang diatur tampilannya.</li>
  </ol>
 
- - Menggunakan Grids <br>
+ - **Menggunakan Grids** <br>
  Secara sederhana CSS Grid adalah CSS yang dapat membagi kolom pada website menjadi beberapa bagian sesuai yang diinginkan, baik secara horizontal maupun vertikal. Penggunaan CSS Grid bertujuan untuk mempermudah developer untuk membuat layout dari design yang telah dibuat.
- - Menggunakan Bootstrap <br>
+ - **Menggunakan Bootstrap** <br>
  Bootstrap adalah framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive dengan cepat dan mudah. Framework open source ini diciptakan pada tahun 2011 oleh Mark Otto dan Jacob Thornton dari Twitter.<br>
  Kegunaan bootstrap diantaranya : <br>
  <ol>
