@@ -89,12 +89,12 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-- **Menggunakan max-width element**
+- **Menggunakan max-width element** <br>
  max-width digunakan untuk mengatur batas lebar maksimal dari sebuah elemen, jadi apabila kita menyisipkan gambar di halaman website kita maka gambar tersebut lebarnya akan 100% menyesuaikan dengan ukuran layar.
  ```javascript
     <img style "max-width : 100%;" src="images/nature.jpg" alt="image">
 ```
- - **Menggunakan CSS Unit**
+ - **Menggunakan CSS Unit** <br>
  Ada beberapa macam satuan dalam CSS unit : <br>
  <ol>
 <li>em = mengikuti ukuran huruf element dia berada (parent)</li>
@@ -104,7 +104,7 @@ Teknik yang pertama yaitu menambahkan viewport di HTML yang digunakan untuk  men
 <li>% = realtive terhadap parent.</li>
  </ol> <br>
  
- - **Menggunakan Media Query**
+ - **Menggunakan Media Query** <br>
  Media query digunakan untuk membuat beberapa styles tergantung pada jenis device. Media query untuk responsive web design umumnya menggunakan 2 jenis media query, diantaranya : min-width & max-width. 
  Ada 2 cara dalam menggunakan media query, diantaranya : <br>
  <ol>
