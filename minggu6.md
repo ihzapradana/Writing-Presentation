@@ -108,3 +108,62 @@ Berikut untuk penerapannya : <br>
     display: flex;
     }
 ```
+<br><br>
+
+# **Handling Events & Conditional Rendering** <br>
+## **Handling Events**
+Untuk dapat memberikan event dalam react, kita bisa memakai onClick, onChange, dan attribute-attribute lain seperti halnya yang kita gunakan di HTML JS biasanya. Nah, ketika kita ingin menerapkan sebuah event handler kita tidak bisa memakai varaibel biasa sebagai penampung, seperti set nilai awal = 0 ketika mau melakukan counter. Maka dari itu, ketika kita ingin menerapkan sebuah event handler dengan ada data yang mau ditampilkan / berubah kita harus menggunakan **state**. <br>
+Berikut untuk contoh penerapannya dengan study case membuat tombol counter tamabah & kurang : <br>
+```javascript
+    import { useState } from "react";
+
+    function Counter () {
+    const [count, setCount] = useState(0) // untuk menampung counternya
+
+    const increment = () => {
+        setCount(count + 1)   // fungsi untuk meng-increment kan (ditambah 1)
+    }
+
+    const decrement = () => {
+        setCount(count - 1) // fungsi untuk meng-decrement kan (dikurang 1)
+    }
+
+    return (
+        <>
+        {/* diberi event click */}
+        <button onClick={decrement}>-</button>
+        <span>{count}</span>
+        <button onClick={increment}>+</button>
+        </>
+    )
+    }
+
+export default Counter;
+```
+
+## **Conditional Rendering** <br>
+Adalah sebuah kondisi ketika terjadi sebuah event seperti di klik atau event yang lain. Untuk penerapannya, kita bisa menggunakan if else & operator ternary seperti halnya kita di Javascript biasanya, tinngal bermain logicnya saja mau di beri pengondisian seperti apa. <br>
+Berikut untuk contoh penerapannya dengan study case user harus login terlebih dahulu sebelum dapat melakukan counting pada case di atas : <br>
+```javascript
+    import Counter from "./components/Counter";
+
+    function App() {
+    // untuk conditional renderingnya
+    const [isLogin, setIsLogin] = useState(false);
+
+    return (
+        <div>
+        {/* memunculkan button ketika belum login */}
+        {!isLogin && <button onClick={() => setIsLogin(true)}>Login</button>}
+
+        <br />
+
+        {/* jika sudah login, akan munculkan counternya  */}
+        {isLogin ? <Counter /> : <span>login dulu cuuuy...</span>}
+
+        </div>
+    );
+    }
+
+export default App;
+```
