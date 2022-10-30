@@ -194,3 +194,63 @@ Berikut contoh penerapannya untuk menampilkan list digimon : <br>
         });
     }, []);
 ```
+<br>
+
+# **Form** <br>
+Penggunaan form di react sebenarnya sama saja dengan penggunaannya di HTML biasa. Namun ketika menghadapi banyak kasus, akan lebih mudah jika memiliki sebuah fungsi JavaScript yang menangani sebuah submisi dari sebuah form dan memiliki akses terhadap data yang dimasukkan pengguna ke dalam form. Seperti halnya elemen form seperti tag input, textarea & select, mereka punya state masing-masing & meng-update sesuai inputan user. Di react, state yang dapat berubah ini akan disimpan dalam property yaitu menggunakan setState(). <br>
+Berikut untuk penerapannya : <br>
+```javascript
+    import { useState } from "react";
+    import axios from "axios";
+
+    const Form = () => { // Membuat fungsi bernama Form
+    const [name, setName] = useState(""); // untuk menampung nama & untuk mengubahnya nanti
+    const [address, setAddress] = useState(""); //  untuk menampung address & untuk mengubahnya nanti
+    const [program, setProgram] = useState(""); //  untuk menampung program & untuk mengubahnya nanti
+    const [data, setData] = useState({}); // untuk menampung data & untuk menampilkannya nanti
+
+    const handleSubmit = (e) => { // Membuat fungsi untuk menghandle submit
+    e.preventDefault();
+
+    axios // Untuk mengirimkan data yang isinya : name, address, program dari database
+      .post("http://localhost:3000/student", {
+        name,
+        address,
+        program,
+      })
+      .then(() => {
+        setData({ name, address, program }); // Untuk menampilkan nama, address, program
+        setName(""); // untuk mengosongkan form name ketika button submit sudah di klik
+        setAddress(""); // untuk mengosongkan form address ketika button submit sudah di klik
+        setProgram(""); // untuk mengosongkan form program ketika button submit sudah di klik
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+    
+    return ( 
+    <>
+        <form action="" onSubmit={handleSubmit}>  {/* Memanggil fungsi handleSubmit ketika button submit di klik */}
+        <label htmlFor="name">Name</label> 
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />  {/* Mengambil value inputan name user */}
+        <label htmlFor="address">Address</label>
+        <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} /> {/* Mengambil value inputan address user */}
+        <label htmlFor="option">Program</label>
+        <select value={program} onChange={(e) => setProgram(e.target.value)}> {/* Mengambil value pilihan program user */}
+            <option value="">select program</option>
+            <option value="KM">KM</option>
+            <option value="SIC">SIC</option>
+            <option value="Amman">Beasiswa</option>
+        </select>
+        <button type="submit">Submit</button>
+        </form>
+
+        <br />
+        <h2>Name: {data.name}</h2> {/* Menampilkan name hasil dari inputan */}
+        <h2>Address: {data.address}</h2> {/* Menampilkan address hasil dari inputan */}
+        <h2>Program: {data.program}</h2> {/* Menampilkan program hasil dari pilhan */}
+    </>
+  );
+};
+```
