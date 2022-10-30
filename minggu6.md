@@ -159,11 +159,38 @@ Berikut untuk contoh penerapannya dengan study case user harus login terlebih da
         <br />
 
         {/* jika sudah login, akan munculkan counternya  */}
-        {isLogin ? <Counter /> : <span>login dulu cuuuy...</span>}
+        {isLogin ? <Counter /> : <span>Silakan login dulu</span>}
 
         </div>
     );
     }
 
 export default App;
+```
+<br>
+
+# **Lifecycle Method & Hooks** <br>
+Lifecycle (Siklus Hidup) adalah  aktifitas method yang dilakukan oleh React Native ketika aplikasi di jalankan. Tujuan lifecycle penting untuk dipelajari karena lifecycle mengatur semua aktifitas yang terjadi pada aplikasi yang kita buat. <br>
+Jenis-jenis lifecycle pada react diantaranya : <br>
+<ol>
+<li>Mount</li> Sebuah siklus ketika aplikasi baru saja di buka atau pengertian muudahnya mount itu untuk memunculkan.
+<li>Update</li>  Sebuah siklus ketika kita mengubah data yang telah di Mounting.
+<li>Unmount</li> Proses menghilangkan atau mendestroy komponen yang sebelumnya di definisikan.
+</ol>
+Dalam lifecycle terdapat yang namanya useEffect(), yaitu untuk memberi efek samping ketika proses lifecycle berlangsung. Ketika akan menggunakan useEffect, kita pasti akan membutuhkan useState sebagai penampung <br>
+Berikut contoh penerapannya untuk menampilkan list digimon : <br>
+
+```javascript
+    function ListDigimon() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [digimons, setDigimons] = useState([]);
+
+    useEffect(() => { 
+        axios("https://digimon-api.vercel.app/api/digimon") // Untuk melakukan fetching data digimon
+        .then((res) => {
+        setDigimons(res.data);
+        setIsLoading(false);
+        console.log(res.data);
+        });
+    }, []);
 ```
