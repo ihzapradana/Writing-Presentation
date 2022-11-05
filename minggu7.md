@@ -96,7 +96,7 @@ Lalu bagaimana jika kita ingin menampilkan suatu halaman sebagai halaman pertama
 ```
 <br><br>
 
-# **State Managemen ~ Redux** <br>
+# **State Management ~ Redux** <br>
 <B>Redux </B>adalah sebuah aplikasi state management. State management adalah cara untuk memfasilitasi komunikasi dan berbagai data lintas komponen. Redux berfungsi untuk melakukan perubahan state yang dibutuhkan oleh setiap fungsional yang ada di suatu aplikasi. Tujuan redux untuk mengatasi props drilling (props nya di oper-oper). Untuk membuat perubahan tersebut, Redux memiliki tiga komponen utama yaitu action, reducer, dan store. Langkah-langkah dalam menggunakan redux dalam react yaitu : <br>
 <ol>
 <li>Buat Store</li>
@@ -181,7 +181,7 @@ Lalu bagaimana jika kita ingin menampilkan suatu halaman sebagai halaman pertama
     const [count, setCount] = useState(0);
 
     const increment = () => {
-        dispatch(incrementKeranjang('oke'))
+        dispatch(incrementKeranjang())
         setCount(count + 1);
     };
 
@@ -192,4 +192,49 @@ Lalu bagaimana jika kita ingin menampilkan suatu halaman sebagai halaman pertama
         setCount(count - 1);
     };
 ```
+Dalam mengirimkan action menggunakan dispatch, kita juga bisa menampung data / memberikan info tambahan dalam aksi itu menggunakan "payload". Caranya adalah dengan menjadikan "payload" tersebut sebagai parameter dalam function action nya. Kemudian saat function action dengan parameter payload tersebut dipanggil function lain yang menggunakan dispatch, kita ganti parameter function action itu dengan data / pesan sesuai keinginan kita. <br>
+Berikut untuk contoh penerapannya : <br>
+```javascript
+    //payload dijadikan sebagai parameter dalam function action yang mengembalikan tipe dari masing-masing action
+    export const INCREMENT_KERANJANG = "INCREMENT_KERANJANG"
+    export const DECREMENT_KERANJANG = "DECREMENT_KERANJANG"
+
+    export function incrementKeranjang(payload) {
+    return {
+        type: INCREMENT_KERANJANG,
+        payload
+    }
+    }
+
+    export function decrementKeranjang(payload) {
+    return {
+        type: DECREMENT_KERANJANG,
+        payload
+    }
+};
+    //Kemudian saat function action dengan parameter payload tersebut dipanggil function lain yang menggunakan dispatch, kita ganti parameter function action itu dengan data / pesan sesuai keinginan. Misal menampilkan pesan "oke. ditambah / dikurangi"
+    function Counter() {
+    const dispatch = useDispatch();
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        dispatch(incrementKeranjang('oke, ditambah'))
+        setCount(count + 1);
+    };
+
+    const increment = () => {
+        dispatch(decrementKeranjang('oke, dikurangi'))
+        setCount(count - 1);
+    };
+
+    return (
+        <>
+        <button onClick={decrement}>-</button>
+        <span>{count}</span>
+        <button onClick={increment}>+</button>
+        </>
+    );
+};
+```
+
 </ol>
