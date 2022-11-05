@@ -59,7 +59,7 @@ Dalam penggunaanya, react-router secara garis besar hampir mirip dengan HTML bia
     </nav>
 ```
 
-Selain itu ada juga yang namanya outlet yang digunakan untuk memanggil anak-anak dari induk. Misalnya kita punya sebuah halam about yang di dalamnya ada halaman about teachers & about students. Nah, halaman about teachers & students merupakan anak dan halaman about merupakan induknya. <br>
+Selain itu ada juga yang namanya <B>Outlet</B> yang digunakan untuk memanggil anak-anak dari induk. Misalnya kita punya sebuah halam about yang di dalamnya ada halaman about teachers & about students. Nah, halaman about teachers & students merupakan anak dan halaman about merupakan induknya. <br>
 ```javascript
     import { Outlet, Link } from "react-router-dom";
 
@@ -180,11 +180,13 @@ Lalu bagaimana jika kita ingin menampilkan suatu halaman sebagai halaman pertama
     const dispatch = useDispatch(); //untuk meng-trigger action agar mengubah data di store
     const [count, setCount] = useState(0);
 
+    //Membuat function increment untuk menambahkan count dengan 1
     const increment = () => {
         dispatch(incrementKeranjang())
         setCount(count + 1);
     };
 
+    //Membuat function decrement untuk mengurangkan count dengan 1
     const decrement = () => {
         dispatch({
         type: "DECREMENT_KERANJANG"
@@ -212,18 +214,21 @@ Berikut untuk contoh penerapannya : <br>
         payload
     }
 };
-    //Kemudian saat function action dengan parameter payload tersebut dipanggil function lain yang menggunakan dispatch, kita ganti parameter function action itu dengan data / pesan sesuai keinginan. Misal menampilkan pesan "oke. ditambah / dikurangi"
+    // Kemudian saat function action dengan parameter payload tersebut dipanggil function lain yang menggunakan dispatch, kita ganti parameter function action itu dengan data / pesan sesuai keinginan. Misal menampilkan pesan "oke. ditambah / dikurangi" ketika di klik tombol button nya.
+
     function Counter() {
     const dispatch = useDispatch();
     const [count, setCount] = useState(0);
 
+    //Membuat function increment untuk menambahkan count dengan 1
     const increment = () => {
-        dispatch(incrementKeranjang('oke, ditambah'))
+        dispatch(incrementKeranjang('oke, ditambah')) // pesan payload
         setCount(count + 1);
     };
 
+    //Membuat function increment untuk mengurangkan count dengan 1
     const increment = () => {
-        dispatch(decrementKeranjang('oke, dikurangi'))
+        dispatch(decrementKeranjang('oke, dikurangi')) // pesan payload
         setCount(count - 1);
     };
 
@@ -236,5 +241,59 @@ Berikut untuk contoh penerapannya : <br>
     );
 };
 ```
-
 </ol>
+<br><br>
+
+# **State Management ~ Async Action with Redux Thunk and Middleware** <br>
+Apa itu Redux Thunk? Redux Thunk adalah sebuah  middleware yang memungkinkan kita untuk membuat Action yang mengembalikan function, bukan action. Selain itu, Thunk juga dapat membuat fungsi yang di dalamnya ada proses asynchronusnya agar kita dapat melakukan delay dulu saat proses pengambilan data di API.<br>
+Untuk dapat menggunakan Redux Thunk, terlebih dahulu kita menginstallnya dengan mengtikkan perintah "npm install redus react-redux", kemudian perintah "npm install redux-thunk@2.3.0", dan setelah itu mengimportnya.<br>
+Berikut untuk contoh penerapannya : <br>
+```javascript
+    import { createStore, combineReducers, applyMiddleware } from 'redux';
+    import thunk from 'redux-thunk';
+    import todoReducer from '../reducer/todoReducer';
+
+    const allReducer = combineReducers({
+    todo: todoReducer,
+    })
+
+    const store = createStore(allReducer, applyMiddleware(thunk))
+
+    export default store;
+```
+Untuk implementasi penggunaan Redux Thunk yang umum adalah berkomunikasi secara asynchronus dengan API eksternal untuk mengambil atau menyimpan data.<br>
+Berikut untuk contoh penerapannya : <br>
+```javascript
+    import axios from "axios";
+    //Membuat variabel untuk menampung action
+    export const GET_TODO = "GET_TODO";
+    export const FETCH_START = "FETCH_START";
+    export const SUCCESS_GET_TODO = "SUCCESS_GET_TODO";
+
+    //Function untuk tipe dari setiap action
+    function fetchStart() {
+    return {
+        type: FETCH_START,
+    };
+    }
+
+    function successGetTodo(data) {
+    return {
+        type: SUCCESS_GET_TODO,
+        payload: data,
+    };
+    }
+
+export const getTodo = () => {
+  return async (dispatch) => {
+    // untuk meng-trigger action FETCH_START
+    dispatch(fetchStart());
+
+    // untuk mendapatkan data todo dari API dan mengisinya ke todos
+    const result = await axios.get(
+      "https://63478a450484786c6e82998f.mockapi.io/todo"
+    );
+    // untuk meng-trigger action SUCCESS_GET_TODO
+    dispatch(successGetTodo(result.data));
+  };
+};
