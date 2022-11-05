@@ -96,4 +96,100 @@ Lalu bagaimana jika kita ingin menampilkan suatu halaman sebagai halaman pertama
 ```
 <br><br>
 
+# **State Managemen ~ Redux** <br>
+<B>Redux </B>adalah sebuah aplikasi state management. State management adalah cara untuk memfasilitasi komunikasi dan berbagai data lintas komponen. Redux berfungsi untuk melakukan perubahan state yang dibutuhkan oleh setiap fungsional yang ada di suatu aplikasi. Tujuan redux untuk mengatasi props drilling (props nya di oper-oper). Untuk membuat perubahan tersebut, Redux memiliki tiga komponen utama yaitu action, reducer, dan store. Langkah-langkah dalam menggunakan redux dalam react yaitu : <br>
+<ol>
+<li>Buat Store</li>
 
+```javascript
+    import { createStore } from 'redux'
+    import keranjangReducer from '../reducer/keranjangReducer'
+
+    const store = createStore(keranjangReducer)
+
+    export default store;
+```
+<li>Buat Reducer</li>
+
+```javascript
+    const initialState = {
+    totalKeranjang: 0,
+    };
+  
+  function keranjangReducer(state = initialState, action) {
+    console.log(action);
+  
+    switch (action.type) { 
+      default:
+        return state;
+    }
+  };
+  
+  export default keranjangReducer;
+```
+<li>Buat Provider (untuk membari tahu bahwa storenya sudah tersedia</li>
+
+```javascript
+    import { Provider } from 'react-redux';
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+        <Provider store={store}>
+            <App />
+        </Provider>
+    );
+```
+<li>Ambil Data dari Store menggunakan useSelector()</li>
+
+```javascript
+    import { useSelector } from 'react-redux'
+
+    function Keranjang() {
+    const {totalKeranjang} = useSelector(state => state)
+
+
+    return (
+        <div>
+        <span>Keranjang</span>
+        <span> {totalKeranjang}</span>
+        </div>
+    )
+    }
+
+    export default Keranjang;
+```
+<li>Ubah Data di Store menggunakan dispatch(action)</li>
+
+```javascript
+    import { useDispatch } from "react-redux";
+
+    export function incrementKeranjang(payload) {
+    return {
+        type: INCREMENT_KERANJANG,
+        payload
+    }
+    }
+
+    export function decrementKeranjang(payload) {
+    return {
+        type: DECREMENT_KERANJANG,
+        payload
+    }
+    }
+
+    function Counter() {
+    const dispatch = useDispatch(); //untuk meng-trigger action agar mengubah data di store
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        dispatch(incrementKeranjang('oke'))
+        setCount(count + 1);
+    };
+
+    const decrement = () => {
+        dispatch({
+        type: "DECREMENT_KERANJANG"
+        })
+        setCount(count - 1);
+    };
+```
+</ol>
