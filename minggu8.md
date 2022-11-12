@@ -249,3 +249,7 @@ Berikut adalah contoh implementasi menggunakan RTL (React Testing Library)<br>
     expect(count.textContent).toBe("1")
     });
 ```
+Dalam melakukan testing juga terdapat yang namanya TDD (Test Driven Development). Pada umumnya testing dilakukan setelah fitur selesai dibuat, proses ini terjadi pada development biasa. Sedangkan pada proses TDD, testing dilakukan lebih dulu sebelum membuat fitur. Dalam TDD, terdapat sebuah lifecycle diantaranya yaitu :
+- Red zone (Test Fails) = berisi sebuah ekspektasi (masih belum ada code program, hanya ekspektasi saja).
+- Green zone (Test Passess)= realasasi dari ekspektasi tersebut (proses pembuatan code program).
+- Blue zone (Refactor) = tahap efisiensi dari code program, seprti membuat codingan yang simple, mudah dimengerti, dan rapi. Intinya untuk membuat code yang telah dibuat sebelumnya agar lebih rapi & efisien.
